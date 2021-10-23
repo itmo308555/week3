@@ -6,11 +6,13 @@
     <title>fetch</title>
   </head>
   <body>
-    <input id="inp" type="url" />
-    <input id="bt" type="submit" value="Send"  />
+    <form id="form" action="#">
+      <input id="inp" type="url" placeholder="Input URL" />
+      <input id="bt" type="submit" value="Send" onClick="onButtonClick();" />
+    </form>
     <script>
       const inputField = document.getElementById("inp");
-      const button = document.getElementById("bt");
+      /*const button = document.getElementById("bt");*/
       function onButtonClick() {
         fetch(inputField.value)
           .then((response) => {
@@ -20,7 +22,7 @@
             inputField.value = data;
           });
       };
-      button.addEventListener("click", onButtonClick);
+      /*button.addEventListener("click", onButtonClick);*/
     </script>
   </body>
 </html>
