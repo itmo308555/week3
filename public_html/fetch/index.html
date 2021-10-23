@@ -2,24 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-   
+    
     <title>fetch</title>
   </head>
   <body>
-    <form id="form" action="#">
-      <input id="inp" type="url" placeholder="Input URL" />
-      <input id="bt" type="submit" value="Send" onClick="onButtonClick()" />
-    </form>
+    <input id="inp" type="text" />
+    <button id="bt"></button>
     <script>
-      const inputField = document.getElementById("inp");
-      /*const button = document.getElementById("bt");*/
+      const $input = document.querySelector("#inp");
+      const $button = document.querySelector("#bt");
       function onButtonClick() {
-        fetch(inputField.value)
-            .then((response) => response.text())
-          .then((data) => (inputField.value = data));
-         
+        fetch($input.value)
+          .then((response) => {
+            return response.text();
+          })
+          .then((string) => {
+            $input.value = string;
+          });
       }
-      /*button.addEventListener("click", onButtonClick);*/
+      $button.addEventListener("click", onButtonClick);
     </script>
   </body>
 </html>
