@@ -17,7 +17,7 @@
             return response.text();
           })
           .then((string) => {
-            $input.value = string;
+            inputField.value = string;
           });
       };
       button.addEventListener("click", onButtonClick);
