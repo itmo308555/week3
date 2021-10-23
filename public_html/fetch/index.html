@@ -9,10 +9,10 @@
     <input id="inp" type="text" />
     <button id="bt" type="submit" ></button>
     <script>
-      const $input = document.querySelector("#inp");
-      const $button = document.querySelector("#bt");
+      const inputField = document.getElementById("inp");
+      const button = document.getElementById("bt");
       function onButtonClick() {
-        fetch($input.value)
+        fetch(inputField.value)
           .then((response) => {
             return response.text();
           })
