@@ -1,7 +1,7 @@
 <html>
     <body>
         <input type="text" id="inp">
-        <button id="bt" type ="submit" value="Ckick"  onclick="fetchtext();"></button>
+        <input id="bt" type="submit" value="Ckick"  onclick="fetchtext();" />
         <script>
             async function fetchtext(){
                 let Response = await fetch(document.getElementById("inp").value);
