@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    
-    <title>fetch</title>
-  </head>
-  <body>
-    <input id="inp" type="text" />
-    <input id="bt" type="submit" value="Send" />
-    <script>
-      const $input = document.querySelector("#inp");
-      const $button = document.querySelector("#bt");
-      function onButtonClick() {
-        fetch($input.value)
-          .then((response) => {
-            return response.text();
-          })
-          .then((string) => {
-            $input.value = string;
-          });
-      }
-      $button.addEventListener("click", onButtonClick);
-    </script>
-  </body>
+<html>
+    <body>
+        <input type="text" id="inp">
+        <button id="bt" onclick="fetchtext();"></button>
+        <script>
+            async function fetchtext(){
+                let Response = await fetch(document.getElementById("inp").value);
+                document.getElementById("inp").value = '';
+                document.getElementById("inp").value = await Response.text();
+            }
+        </script>
+    </body>
+
 </html>
